@@ -1,27 +1,35 @@
-import Post from "./Post"
-import NewPost from "./NewPost"
-import classes from "./PostList.module.css"
-import { useState } from "react"
+import { useState } from "react";
+
+import Post from "./Post";
+import NewPost from "./NewPost";
+import classes from "./PostList.module.css";
+import Modal from "./Modal";
 function PostList() {
-  const [enteredbody, setEnteredBody] = useState('')
-  const [enteredAuthor, setEnteredAuthor] = useState('')
+  const [enteredbody, setEnteredBody] = useState("");
+  const [enteredAuthor, setEnteredAuthor] = useState("");
 
   function bodyChangeHandler(event) {
-    setEnteredBody(event.target.value)
+    setEnteredBody(event.target.value);
   }
 
   function authorChangeHandler(event) {
-    setEnteredAuthor(event.target.value)
+    setEnteredAuthor(event.target.value);
   }
   return (
     <>
-      <NewPost onBodyChange={bodyChangeHandler} onAuthorChange={authorChangeHandler}/>
+      <Modal>
+        <NewPost
+          onBodyChange={bodyChangeHandler}
+          onAuthorChange={authorChangeHandler}
+        />
+      </Modal>
+
       <ul className={classes.posts}>
         <Post author={enteredAuthor} body={enteredbody} />
         <Post author="Manuel" body="Check out the full course!" />
       </ul>
     </>
-  )
+  );
 }
 
-export default PostList
+export default PostList;
