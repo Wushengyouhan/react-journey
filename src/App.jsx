@@ -1,9 +1,8 @@
-import Post from "./components/Post";
+import PostList from "./components/PostList";
 function App() {
   return (
     <main>
-      <Post author="李白" body="床前明月光，疑是地上霜"/>
-      <Post author="李商隐" body="庄生晓梦迷蝴蝶， 望帝春心托杜鹃"/>
+      <PostList />
     </main>
   );
 }
