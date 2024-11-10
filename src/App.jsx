@@ -3,7 +3,7 @@ import { useState } from "react";
 import PostList from "./components/PostList";
 import MainHeader from "./components/MainHeader";
 function App() {
-  const [modalIsVisible, setModalIsVisible] = useState(true);
+  const [modalIsVisible, setModalIsVisible] = useState(false);
 
   function showModalHanler() {
     setModalIsVisible(true);
